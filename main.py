@@ -10,11 +10,9 @@ import markdown
 from textwrap import dedent
 
 os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
-# Organization ID is optional
-try:
-    os.environ["OPENAI_ORGANIZATION"] = config("OPENAI_ORGANIZATION_ID")
-except:
-    pass  # Organization ID not required
+# Remove organization header to avoid conflicts
+if "OPENAI_ORGANIZATION" in os.environ:
+    del os.environ["OPENAI_ORGANIZATION"]
 
 # Optional PDF generation - only import if available
 try:
