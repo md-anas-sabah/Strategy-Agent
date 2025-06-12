@@ -106,7 +106,7 @@ class StrategyAgentSystem:
             competitor_analyst = Agent(
                 role="Competitive Intelligence Specialist", 
                 goal="Research competitors and identify market opportunities",
-                backstory="You are a market research expert specializing in competitive analysis and industry insights.",
+                backstory="You are a market research expert specializing in competitive analysis and industry insights with extensive knowledge of the EdTech industry.",
                 llm=self.llm,
                 verbose=True
             )
@@ -159,7 +159,7 @@ class StrategyAgentSystem:
             competitor_task = Task(
                 description=f"""Conduct detailed competitive intelligence analysis for: {self.business_info}
                 
-                Create comprehensive competitor analysis including:
+                Use your knowledge of the EdTech industry to identify REAL competitors and create comprehensive competitor analysis including:
                 
                 1. **Top Competitors Comparison Table** with:
                    - Competitor name, founding year, core product, business model
