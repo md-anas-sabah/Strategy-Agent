@@ -124,15 +124,23 @@ class StrategyAgentSystem:
             print("=" * 50)
             
             business_task = Task(
-                description=f"""Analyze this business and provide strategic insights: 
+                description=f"""Conduct comprehensive business intelligence analysis for:
                 
                 Business: {self.business_info}
                 Goals: {self.business_goals}
                 Budget: {self.budget_info}
                 Current Marketing: {self.current_marketing}
                 
-                Create 2-3 detailed customer personas and identify specific growth opportunities to achieve the revenue goals.""",
-                expected_output="A comprehensive business analysis with customer personas, market insights, and growth opportunities.",
+                Provide:
+                1. Company Overview (extract business name, industry, core offering, business model)
+                2. Mission, Vision, Values (create professional statements)
+                3. Market & Industry Analysis (market size, trends, regulations, barriers)
+                4. SWOT Analysis (detailed strengths, weaknesses, opportunities, threats)
+                5. Strategic Goals (convert goals into SMART objectives)
+                6. Target Customer Personas (3-4 detailed personas with demographics, behaviors, pain points)
+                7. Resource Assessment (team, budget allocation, infrastructure needs)
+                8. Financial Projections (revenue, CAC, LTV, burn rate projections)""",
+                expected_output="Comprehensive business intelligence report with company overview, market analysis, SWOT, strategic goals, personas, and financial projections.",
                 agent=business_analyst
             )
             
@@ -149,11 +157,33 @@ class StrategyAgentSystem:
             print("=" * 50)
             
             competitor_task = Task(
-                description=f"""Research competitors and market opportunities for: {self.business_info}
+                description=f"""Conduct detailed competitive intelligence analysis for: {self.business_info}
                 
-                Identify 3-5 main competitors, their strategies, pricing, and marketing approaches. 
-                Find market gaps and opportunities for differentiation.""",
-                expected_output="A detailed competitor analysis with insights, opportunities, and competitive positioning recommendations.",
+                Create comprehensive competitor analysis including:
+                
+                1. **Top Competitors Comparison Table** with:
+                   - Competitor name, founding year, core product, business model
+                   - Total funding, key investors, market presence
+                   - Key strengths and weaknesses
+                   - Pricing strategies and marketing approaches
+                   
+                2. **Digital Presence Analysis**:
+                   - SEO and content marketing strategies
+                   - Social media presence and engagement
+                   - Partnership and collaboration strategies
+                   
+                3. **Market Positioning Analysis**:
+                   - Competitive advantages and differentiators
+                   - Market share insights and positioning gaps
+                   - Opportunities for differentiation
+                   
+                4. **Industry Insights**:
+                   - Funding trends and investment patterns
+                   - Technology trends and innovation areas
+                   - Regulatory landscape and compliance requirements
+                   
+                Provide specific, actionable insights for competitive positioning and market entry strategies.""",
+                expected_output="Comprehensive competitor analysis with comparison table, digital presence analysis, positioning insights, and strategic recommendations.",
                 agent=competitor_analyst
             )
             
@@ -170,25 +200,52 @@ class StrategyAgentSystem:
             print("=" * 50)
             
             strategy_task = Task(
-                description=f"""Create a comprehensive marketing strategy using:
+                description=f"""Create a comprehensive business and marketing strategy document using:
                 
                 Business Analysis: {business_result}
-                
                 Competitor Analysis: {competitor_result}
-                
                 Budget Available: {self.budget_info}
                 Current Marketing: {self.current_marketing}
                 Goals: {self.business_goals}
                 
-                Include:
-                - Executive summary with key recommendations
-                - Target audience strategy for each persona
-                - Channel recommendations (digital marketing, social media, content, SEO, paid ads)
-                - Monthly budget allocation across channels
-                - 6-month implementation roadmap
-                - Success metrics and KPIs
-                - Specific tactics to achieve {self.business_goals}""",
-                expected_output="A comprehensive marketing strategy document with budget allocations, channel recommendations, implementation timeline, and success metrics.",
+                Create a detailed strategy document with these sections:
+                
+                **1. Executive Summary**
+                - Strategic priorities and key recommendations
+                - Expected outcomes and ROI projections
+                - Critical success factors
+                
+                **2. Action Plan & Initiatives Table**
+                - Specific initiatives with owners, timelines, and milestones
+                - Implementation roadmap with quarterly breakdown
+                
+                **3. Resource Allocation Strategy**
+                - Team structure and hiring plans
+                - Budget allocation across functions
+                - Technology and infrastructure requirements
+                
+                **4. Financial Projections Table**
+                - Revenue targets (ARR, MRR growth)
+                - Cost structure (CAC, LTV, burn rate)
+                - Profitability timeline and key metrics
+                
+                **5. Marketing Channel Strategy**
+                - Digital marketing (SEO, content, social media, paid ads)
+                - Traditional marketing (conferences, partnerships, PR)
+                - Channel-specific budget allocation and expected ROI
+                - Customer acquisition and retention strategies
+                
+                **6. Risk Assessment & Mitigation**
+                - Market risks, competitive threats, operational risks
+                - Probability assessment and mitigation strategies
+                
+                **7. Monitoring & KPI Framework**
+                - Success metrics for each strategic goal
+                - Review cycles and optimization processes
+                - Dashboard and tracking recommendations
+                
+                Ensure all recommendations are specific, measurable, and aligned with achieving: {self.business_goals}""",
+                expected_output="Comprehensive business strategy document with executive summary, action plans, resource allocation, financial projections, marketing strategy, risk assessment, and KPI framework.",
                 agent=strategy_composer
             )
             
@@ -206,41 +263,60 @@ class StrategyAgentSystem:
             
             output_dir = self.create_output_directory()
             
-            # Create comprehensive markdown report
-            md_content = f"""# Comprehensive Marketing Strategy Report
+            # Create comprehensive markdown report in the format you requested
+            md_content = f"""# Comprehensive Business Strategy Report
 **Generated:** {datetime.now().strftime("%B %d, %Y at %I:%M %p")}
 
 ## Executive Summary
-This report provides a complete marketing strategy to achieve your goal of {self.business_goals} for your sustainable home goods e-commerce business.
+This comprehensive strategy document outlines a growth-focused roadmap to achieve the strategic objectives: {self.business_goals}
 
 ---
 
-## 1. Business Intelligence Analysis
+## Business Intelligence Analysis
 {business_result}
 
 ---
 
-## 2. Competitive Intelligence Report  
+## Competitive Intelligence & Market Analysis  
 {competitor_result}
 
 ---
 
-## 3. Comprehensive Marketing Strategy
+## Strategic Business Plan & Marketing Strategy
 {strategy_result}
 
 ---
 
-## Implementation Next Steps
-1. **Week 1-2**: Set up tracking and analytics systems
-2. **Week 3-4**: Launch priority marketing channels identified in strategy
-3. **Month 2**: Optimize based on initial performance data
-4. **Month 3**: Scale successful channels and test new opportunities
-5. **Quarterly**: Review and adjust strategy based on results
+## Implementation Roadmap
+### Phase 1: Foundation (Month 1-2)
+- Set up tracking and analytics systems
+- Implement core marketing infrastructure
+- Launch priority customer acquisition channels
+
+### Phase 2: Optimization (Month 3-4)  
+- Optimize based on initial performance data
+- Scale successful channels and campaigns
+- Refine customer targeting and messaging
+
+### Phase 3: Growth (Month 5-6)
+- Scale successful channels and test new opportunities
+- Expand into new market segments
+- Implement retention and upselling strategies
+
+### Phase 4: Review & Scale (Quarterly)
+- Comprehensive strategy review and adjustments
+- Performance analysis against KPIs
+- Strategic pivots based on market feedback
 
 ---
 
-**Report prepared by:** Strategy Agent AI System  
-**Contact:** Generated with Claude Code AI Assistant
+## Conclusion
+This strategic framework provides a clear path to achieving sustainable growth and market leadership. Success will depend on disciplined execution, continuous optimization, and maintaining focus on key performance indicators while adapting to market dynamics.
+
+---
+
+**Report Prepared By:** Strategy Agent AI System   
+**Date:** {datetime.now().strftime("%B %d, %Y")}
 """
             
             # Save markdown file
@@ -305,9 +381,16 @@ def collect_business_information():
     # Business Information
     print("\n📊 SECTION 1: BUSINESS INFORMATION")
     print("-" * 40)
+    business_name = input(dedent("""
+    🏢 What is your business name?
+    >>> """)).strip()
+    
     business_info = input(dedent("""
     📝 Describe your business (industry, products/services, business model, stage):
     >>> """)).strip()
+    
+    # Combine business name with description
+    business_info = f"Business Name: {business_name}. {business_info}"
     
     # Goals and Objectives
     print("\n🎯 SECTION 2: GOALS & OBJECTIVES")
