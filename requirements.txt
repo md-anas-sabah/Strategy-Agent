@@ -6,3 +6,16 @@ openai
 python-decouple
 duckduckgo-search
 markdown
+selenium
+beautifulsoup4
+requests
+lxml[html_clean]
+pandas
+numpy
+yfinance
+tweepy
+feedparser
+textblob
+vaderSentiment
+python-dotenv
+aiohttp

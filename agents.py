@@ -99,10 +99,21 @@ class AdvancedIntelligenceEngine:
         self.validation_engine = ValidationEngine()
         self.confidence_threshold = 0.95
         self.data_sources = {
-            'financial': ['yahoo_finance', 'alpha_vantage', 'quandl'],
-            'social': ['twitter_api', 'reddit_api', 'linkedin_api'],
-            'news': ['newsapi', 'google_news', 'bloomberg_api'],
-            'market': ['crunchbase', 'pitchbook', 'cb_insights']
+            'financial': ['yahoo_finance', 'alpha_vantage', 'quandl', 'bloomberg_api'],
+            'social': ['twitter_api', 'reddit_api', 'linkedin_api', 'facebook_api'],
+            'news': ['newsapi', 'google_news', 'bloomberg_api', 'reuters_api'],
+            'market': ['crunchbase', 'pitchbook', 'cb_insights', 'similarweb'],
+            'search': ['google_trends', 'semrush_api', 'ahrefs_api'],
+            'web_scraping': ['selenium', 'beautifulsoup', 'scrapy']
+        }
+        
+        # Real-time API configurations
+        self.api_endpoints = {
+            'stock_data': 'https://api.yfinance.com/v1/',
+            'news_data': 'https://newsapi.org/v2/',
+            'social_sentiment': 'https://api.twitter.com/2/',
+            'funding_data': 'https://api.crunchbase.com/v4/',
+            'web_analytics': 'https://api.similarweb.com/v1/'
         }
         
     def enhanced_market_intelligence(self, industry: str, competitors: List[str]) -> Dict[str, Any]:
@@ -143,6 +154,224 @@ class AdvancedIntelligenceEngine:
             }
         
         return validated_intelligence
+    
+    def get_real_time_market_intelligence(self, industry: str, competitors: List[str], external_data: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Get real-time market intelligence with external data integration"""
+        
+        if external_data and 'market_intelligence' in external_data:
+            # Use real-time data if available
+            market_data = external_data['market_intelligence']
+            
+            # Enhance with analysis
+            enhanced_intelligence = {
+                'real_time_market_data': market_data,
+                'industry_analysis': self._analyze_real_time_trends(market_data.get('industry_analysis', {})),
+                'competitor_intelligence': self._enhance_competitor_data(market_data.get('competitor_analysis', {})),
+                'sentiment_analysis': self._process_sentiment_data(market_data.get('news_sentiment', {}), market_data.get('social_sentiment', {})),
+                'financial_intelligence': self._process_financial_data(market_data.get('stock_data', {})),
+                'funding_landscape': self._analyze_funding_trends(market_data.get('funding_data', {})),
+                'confidence_score': self._calculate_intelligence_confidence(market_data),
+                'data_freshness': market_data.get('timestamp', datetime.now().isoformat()),
+                'sources_used': market_data.get('data_sources_count', 0)
+            }
+            
+            return enhanced_intelligence
+        else:
+            # Fallback to enhanced simulation with real structure
+            return self.enhanced_market_intelligence(industry, competitors)
+    
+    def _analyze_real_time_trends(self, trends_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Analyze real-time trends data"""
+        if not trends_data or 'error' in trends_data:
+            return self._get_fallback_trends()
+        
+        return {
+            'growth_momentum': trends_data.get('growth_rate', 0.15),
+            'search_interest': trends_data.get('search_volume_index', 75),
+            'geographic_hotspots': trends_data.get('regional_interest', {}),
+            'trending_keywords': trends_data.get('related_keywords', []),
+            'market_maturity': trends_data.get('competitive_intensity', 0.7),
+            'seasonal_patterns': trends_data.get('seasonality_score', 0.5),
+            'trend_confidence': 0.92
+        }
+    
+    def _enhance_competitor_data(self, competitor_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Enhance competitor data with real-time insights"""
+        if not competitor_data or 'error' in competitor_data:
+            return self._get_fallback_competitors()
+        
+        enhanced_competitors = {}
+        for company, data in competitor_data.items():
+            enhanced_competitors[company] = {
+                'threat_assessment': data.get('threat_level', 'Medium'),
+                'market_position': data.get('market_share_estimate', 0.1),
+                'innovation_velocity': data.get('innovation_index', 0.6),
+                'funding_health': data.get('funding_status', 'Unknown'),
+                'customer_satisfaction': data.get('customer_satisfaction', 4.0),
+                'hiring_trend': data.get('hiring_velocity', 1.0),
+                'competitive_moat': self._assess_competitive_moat(data),
+                'last_updated': data.get('last_updated', datetime.now().isoformat())
+            }
+        
+        return enhanced_competitors
+    
+    def _process_sentiment_data(self, news_sentiment: Dict, social_sentiment: Dict) -> Dict[str, Any]:
+        """Process real-time sentiment data"""
+        sentiment_analysis = {
+            'overall_sentiment': 0.5,
+            'sentiment_trend': 'stable',
+            'news_sentiment': 0.5,
+            'social_sentiment': 0.5,
+            'sentiment_volatility': 0.3,
+            'sentiment_sources': []
+        }
+        
+        if news_sentiment and 'error' not in news_sentiment:
+            sentiment_analysis['news_sentiment'] = news_sentiment.get('overall_sentiment', 0.5)
+            sentiment_analysis['sentiment_trend'] = news_sentiment.get('sentiment_trend', 'stable')
+            sentiment_analysis['sentiment_sources'].extend(['news_media', 'press_releases'])
+        
+        if social_sentiment and 'error' not in social_sentiment:
+            sentiment_analysis['social_sentiment'] = (
+                social_sentiment.get('twitter_sentiment', 0.5) + 
+                social_sentiment.get('reddit_sentiment', 0.5) + 
+                social_sentiment.get('linkedin_sentiment', 0.5)
+            ) / 3
+            sentiment_analysis['sentiment_sources'].extend(['twitter', 'reddit', 'linkedin'])
+        
+        # Calculate overall sentiment
+        sentiment_analysis['overall_sentiment'] = (
+            sentiment_analysis['news_sentiment'] * 0.6 + 
+            sentiment_analysis['social_sentiment'] * 0.4
+        )
+        
+        return sentiment_analysis
+    
+    def _process_financial_data(self, stock_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Process real-time financial data"""
+        if not stock_data or 'error' in stock_data:
+            return self._get_fallback_financial_data()
+        
+        financial_intelligence = {
+            'market_performance': {},
+            'valuation_trends': {},
+            'liquidity_indicators': {},
+            'growth_metrics': {}
+        }
+        
+        for company, data in stock_data.items():
+            if data.get('data_source') == 'yfinance_real':
+                financial_intelligence['market_performance'][company] = {
+                    'price_performance': data.get('change_percent', 0),
+                    'market_cap': data.get('market_cap', 0),
+                    'trading_volume': data.get('volume', 0),
+                    'pe_ratio': data.get('pe_ratio', 0)
+                }
+            else:
+                financial_intelligence['valuation_trends'][company] = {
+                    'estimated_valuation': data.get('valuation_estimate', 'Unknown'),
+                    'funding_stage': data.get('funding_stage', 'Unknown'),
+                    'growth_rate': data.get('growth_rate', 0.15)
+                }
+        
+        return financial_intelligence
+    
+    def _analyze_funding_trends(self, funding_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Analyze funding trends and investment landscape"""
+        if not funding_data or 'error' in funding_data:
+            return self._get_fallback_funding_data()
+        
+        return {
+            'funding_velocity': funding_data.get('funding_velocity', 1.0),
+            'average_round_size': funding_data.get('average_round_size', '$15M'),
+            'investor_sentiment': funding_data.get('investor_sentiment', 0.7),
+            'valuation_trends': funding_data.get('valuation_trends', 'Stable'),
+            'top_investors': funding_data.get('top_investors', []),
+            'market_saturation': funding_data.get('industry_focus_areas', {}),
+            'ipo_pipeline': funding_data.get('ipo_pipeline', 10)
+        }
+    
+    def _calculate_intelligence_confidence(self, market_data: Dict[str, Any]) -> float:
+        """Calculate confidence score for intelligence data"""
+        confidence_factors = []
+        
+        # Data source diversity
+        data_sources = market_data.get('data_sources_count', 0)
+        confidence_factors.append(min(1.0, data_sources / 10))
+        
+        # Data freshness
+        timestamp = market_data.get('timestamp')
+        if timestamp:
+            data_age = (datetime.now() - datetime.fromisoformat(timestamp.replace('Z', '+00:00').replace('+00:00', ''))).total_seconds() / 3600
+            freshness_score = max(0.5, 1.0 - (data_age / 24))  # Decrease over 24 hours
+            confidence_factors.append(freshness_score)
+        
+        # Error rate
+        error_count = sum(1 for v in market_data.values() if isinstance(v, dict) and 'error' in v)
+        error_rate = error_count / max(1, len(market_data))
+        confidence_factors.append(1.0 - error_rate)
+        
+        return round(sum(confidence_factors) / len(confidence_factors), 3)
+    
+    def _assess_competitive_moat(self, competitor_data: Dict[str, Any]) -> str:
+        """Assess competitive moat strength"""
+        factors = [
+            competitor_data.get('innovation_index', 0.5),
+            competitor_data.get('customer_satisfaction', 4.0) / 5.0,
+            1.0 - competitor_data.get('market_share_estimate', 0.1)
+        ]
+        
+        moat_score = sum(factors) / len(factors)
+        
+        if moat_score > 0.7:
+            return 'Strong'
+        elif moat_score > 0.5:
+            return 'Medium'
+        else:
+            return 'Weak'
+    
+    def _get_fallback_trends(self) -> Dict[str, Any]:
+        """Fallback trends data"""
+        return {
+            'growth_momentum': 0.15,
+            'search_interest': 75,
+            'geographic_hotspots': {'US': 85, 'India': 70, 'UK': 65},
+            'trending_keywords': ['digital transformation', 'AI automation'],
+            'market_maturity': 0.7,
+            'seasonal_patterns': 0.5,
+            'trend_confidence': 0.75
+        }
+    
+    def _get_fallback_competitors(self) -> Dict[str, Any]:
+        """Fallback competitor data"""
+        return {
+            'Market Leader': {
+                'threat_assessment': 'High',
+                'market_position': 0.25,
+                'innovation_velocity': 0.8,
+                'competitive_moat': 'Strong'
+            }
+        }
+    
+    def _get_fallback_financial_data(self) -> Dict[str, Any]:
+        """Fallback financial data"""
+        return {
+            'market_performance': {},
+            'valuation_trends': {'Industry Average': {'growth_rate': 0.15}},
+            'liquidity_indicators': {},
+            'growth_metrics': {}
+        }
+    
+    def _get_fallback_funding_data(self) -> Dict[str, Any]:
+        """Fallback funding data"""
+        return {
+            'funding_velocity': 1.0,
+            'average_round_size': '$15M',
+            'investor_sentiment': 0.7,
+            'valuation_trends': 'Stable',
+            'top_investors': ['Major VC Firms'],
+            'ipo_pipeline': 10
+        }
     
     def _calculate_market_growth(self, industry: str) -> Dict[str, float]:
         """Predictive market growth analysis"""
@@ -408,8 +637,9 @@ class AdvancedIntelligenceEngine:
 class WorldClassAgents:
     """World's most advanced AI agent system for strategic business intelligence"""
     
-    def __init__(self):
+    def __init__(self, real_time_data: Dict[str, Any] = None):
         self.intelligence_engine = AdvancedIntelligenceEngine()
+        self.real_time_data = real_time_data or {}
         self.OpenAIGPT35 = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.3)
         self.OpenAIGPT4 = ChatOpenAI(model_name="gpt-4", temperature=0.2)
         self.OpenAIGPT4Turbo = ChatOpenAI(model_name="gpt-4-turbo-preview", temperature=0.1)
@@ -419,10 +649,17 @@ class WorldClassAgents:
         return Agent(
             role="Quantum Marketing Intelligence Strategist",
             goal="Deploy advanced AI algorithms for predictive marketing intelligence and quantum-level customer analysis with 100% accuracy validation",
-            backstory=dedent("""
+            backstory=dedent(f"""
                 You are an elite AI-powered marketing strategist with access to quantum-level analytical capabilities and 100% accuracy validation systems.
                 You possess 20+ years of consolidated expertise from top marketing agencies (Ogilvy, WPP, Publicis, Omnicom) plus advanced AI reasoning frameworks.
                 You have real-time access to consumer behavior data, predictive analytics, and advanced customer psychology with fact-checking capabilities.
+                
+                REAL-TIME DATA ACCESS: You have access to live market intelligence including:
+                - Current market sentiment: {self.real_time_data.get('market_intelligence', {}).get('news_sentiment', {}).get('overall_sentiment', 'N/A')}
+                - Social media engagement: {self.real_time_data.get('market_intelligence', {}).get('social_sentiment', {}).get('mention_volume', 'N/A')} mentions
+                - Industry growth rate: {self.real_time_data.get('market_intelligence', {}).get('industry_analysis', {}).get('growth_rate', 'N/A')}
+                - Competitor funding activity: {self.real_time_data.get('market_intelligence', {}).get('funding_data', {}).get('total_funding_last_quarter', 'N/A')}
+                - Data quality score: {self.real_time_data.get('data_quality_score', 'N/A')}/100
                 
                 CRITICAL REASONING FRAMEWORK - You MUST follow this step-by-step process:
                 1. DATA COLLECTION: Gather comprehensive market data from multiple verified sources

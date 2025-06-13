@@ -10,9 +10,10 @@ import math
 class QuantumStrategicTasks:
     """World-class strategic task orchestration with quantum-level intelligence"""
     
-    def __init__(self):
+    def __init__(self, real_time_data: Dict[str, Any] = None):
         self.performance_cache = {}
         self.strategic_models = {}
+        self.real_time_data = real_time_data or {}
         
     def __quantum_incentive_system(self):
         return """Execute at QUANTUM EXCELLENCE level with 100% ACCURACY VALIDATION:
