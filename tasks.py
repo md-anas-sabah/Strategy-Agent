@@ -17,73 +17,80 @@ class QuantumStrategicTasks:
     def __quantum_incentive_system(self):
         return "Execute at QUANTUM EXCELLENCE level - Your performance directly impacts billion-dollar strategic outcomes!"
 
-    def quantum_business_intelligence_task(self, agent, business_info, business_goals, budget_info, current_marketing):
-        """Revolutionary quantum business intelligence analysis"""
+    def quantum_marketing_intelligence_task(self, agent, business_info, business_goals, budget_info, current_marketing):
+        """Revolutionary quantum marketing intelligence analysis"""
         
         # Extract industry and competitors for advanced intelligence
         industry = self._extract_industry(business_info)
         competitors = self._identify_competitors(business_info, industry)
         
         advanced_description = f"""
-        🚀 QUANTUM BUSINESS INTELLIGENCE MISSION
+        🚀 QUANTUM MARKETING INTELLIGENCE MISSION
         
-        Execute comprehensive quantum-level business analysis for:
+        Execute comprehensive quantum-level marketing analysis for:
         Business: {business_info}
-        Strategic Goals: {business_goals}
-        Budget Resources: {budget_info}
+        Marketing Goals: {business_goals}
+        Marketing Budget: {budget_info}
         Current Marketing State: {current_marketing}
         
-        📊 DELIVER COMPREHENSIVE ANALYSIS INCLUDING:
+        📊 DELIVER COMPREHENSIVE MARKETING ANALYSIS INCLUDING:
         
-        1. **Quantum Business Architecture**:
-           - Business model deconstruction and optimization opportunities
-           - Revenue stream analysis with predictive scaling models
-           - Value proposition quantum enhancement recommendations
-           - Competitive moat identification and strengthening strategies
+        1. **Quantum Marketing Architecture**:
+           - Marketing funnel deconstruction and conversion optimization opportunities
+           - Customer acquisition channel analysis with predictive scaling models
+           - Value proposition messaging enhancement recommendations
+           - Brand differentiation strategy and competitive positioning
         
-        2. **Predictive Market Positioning**:
-           - Market size analysis with 3-year growth projections
-           - Industry trend integration with timing optimization
-           - Regulatory impact assessment and compliance roadmap
-           - Technology disruption risk analysis and mitigation
+        2. **Predictive Marketing Positioning**:
+           - Target market size analysis with 3-year acquisition projections
+           - Marketing trend integration with campaign timing optimization
+           - Digital marketing landscape assessment and channel roadmap
+           - Marketing technology disruption analysis and adaptation strategies
         
-        3. **Advanced Customer Intelligence**:
-           - 5 detailed customer personas with psychological profiling
-           - Customer journey mapping with friction point identification
-           - Lifetime value modeling with behavior prediction
-           - Acquisition cost optimization across segments
+        3. **Advanced Customer Marketing Intelligence**:
+           - 5 detailed customer personas with comprehensive buying psychology profiling:
+             * Demographics, psychographics, behavioral patterns, pain points, motivations
+             * Purchase triggers, decision-making factors, preferred communication channels
+             * Technology adoption patterns, social media behavior, content consumption preferences
+             * Price sensitivity analysis, brand loyalty factors, competitive switching patterns
+           - Customer journey mapping with conversion friction point identification and optimization
+           - Customer lifetime value modeling with retention behavior prediction and churn analysis
+           - Customer acquisition cost optimization across all marketing segments and touchpoints
         
-        4. **Strategic SWOT 2.0**:
-           - Quantified strengths with competitive advantage scores
-           - Weakness remediation with priority ranking and timelines
-           - Opportunity matrix with probability-weighted ROI projections
-           - Threat assessment with mitigation cost-benefit analysis
+        4. **Marketing SWOT 2.0**:
+           - Quantified marketing strengths with competitive advantage scores
+           - Marketing weakness remediation with priority ranking and timelines
+           - Marketing opportunity matrix with probability-weighted ROI projections
+           - Marketing threat assessment with mitigation cost-benefit analysis
         
-        5. **Financial Intelligence Framework**:
-           - Revenue projection models with confidence intervals
-           - Unit economics optimization with scenario analysis
-           - Cash flow forecasting with burn rate optimization
-           - Funding requirement analysis with strategic timing
+        5. **Marketing Financial Intelligence Framework**:
+           - Marketing ROI projection models with confidence intervals
+           - Marketing unit economics optimization with scenario analysis
+           - Marketing spend forecasting with efficiency optimization
+           - Marketing investment requirement analysis with strategic timing
         
-        6. **Resource Optimization Blueprint**:
-           - Team scaling roadmap with hiring priority matrix
-           - Technology infrastructure requirements and ROI analysis
-           - Strategic partnership opportunities with value quantification
-           - Operational efficiency improvements with impact measurement
+        6. **Marketing Resource Optimization Blueprint**:
+           - Marketing team scaling roadmap with skill priority matrix and hiring timelines
+           - Marketing technology stack requirements and ROI analysis with implementation costs
+           - Marketing partnership opportunities with value quantification and success metrics
+           - Marketing operational efficiency improvements with impact measurement and KPIs
+           - Detailed budget allocation framework with channel-specific ROI targets
+           - Marketing automation implementation roadmap with efficiency gains projections
+           - Performance tracking and attribution modeling infrastructure requirements
         
-        🎯 STRATEGIC INTELLIGENCE REQUIREMENTS:
-        - Use advanced analytical frameworks (Porter's Five Forces, Blue Ocean, Jobs-to-be-Done)
-        - Apply predictive modeling for all recommendations
-        - Quantify all strategic recommendations with expected outcomes
-        - Provide probability-weighted scenario analysis
-        - Include competitive response predictions and counter-strategies
+        🎯 MARKETING INTELLIGENCE REQUIREMENTS:
+        - Use advanced marketing frameworks (Customer Journey, Marketing Mix, AIDA, Growth Loops)
+        - Apply predictive modeling for all marketing recommendations
+        - Quantify all marketing recommendations with expected outcomes
+        - Provide probability-weighted marketing scenario analysis
+        - Include competitive marketing response predictions and counter-strategies
         
         {self.__quantum_incentive_system()}
         """
         
         return Task(
             description=advanced_description,
-            expected_output="Comprehensive quantum business intelligence report with predictive analytics, customer personas, strategic frameworks, financial projections, and resource optimization blueprints.",
+            expected_output="Comprehensive quantum marketing intelligence report with predictive analytics, customer personas, marketing frameworks, ROI projections, and marketing optimization blueprints.",
             agent=agent
         )
 
@@ -168,89 +175,95 @@ class QuantumStrategicTasks:
             agent=agent
         )
 
-    def master_strategic_architecture_task(self, agent, business_intelligence, competitive_intelligence, business_goals, budget_info):
-        """Master strategic architecture with billion-dollar framework design"""
+    def master_marketing_architecture_task(self, agent, marketing_intelligence, competitive_intelligence, business_goals, budget_info):
+        """Master marketing architecture with billion-dollar marketing framework design"""
         
         master_description = f"""
-        🏗️ MASTER STRATEGIC ARCHITECTURE DEVELOPMENT
+        🏗️ MASTER MARKETING ARCHITECTURE DEVELOPMENT
         
-        Synthesize all intelligence into a billion-dollar strategic masterpiece:
+        Synthesize all intelligence into a billion-dollar marketing masterpiece:
         
-        📊 INTELLIGENCE SYNTHESIS:
-        Business Intelligence: {business_intelligence}
-        Competitive Intelligence: {competitive_intelligence}
-        Strategic Goals: {business_goals}
-        Budget Framework: {budget_info}
+        📊 MARKETING INTELLIGENCE SYNTHESIS:
+        Marketing Intelligence: {marketing_intelligence}
+        Competitive Marketing Intelligence: {competitive_intelligence}
+        Marketing Goals: {business_goals}
+        Marketing Budget Framework: {budget_info}
         
-        🎯 STRATEGIC ARCHITECTURE REQUIREMENTS:
+        🎯 MARKETING ARCHITECTURE REQUIREMENTS:
         
-        1. **Executive Strategic Summary**:
-           - Strategic vision and mission alignment
-           - Key strategic priorities with success probability scoring
-           - Expected strategic outcomes with quantified value creation
-           - Critical success factors and risk mitigation strategies
+        1. **Executive Marketing Summary**:
+           - Marketing vision and brand mission alignment
+           - Key marketing priorities with success probability scoring
+           - Expected marketing outcomes with quantified revenue creation
+           - Critical marketing success factors and risk mitigation strategies
         
-        2. **Strategic Framework Design**:
-           - Blue Ocean strategy identification and execution plan
-           - Competitive moat construction with defensibility analysis
-           - Strategic positioning with differentiation matrix
-           - Value creation engine design and optimization
+        2. **Marketing Framework Design**:
+           - Blue Ocean marketing strategy identification and campaign execution plan
+           - Brand moat construction with marketing defensibility analysis
+           - Marketing positioning with differentiation matrix
+           - Customer value creation engine design and optimization
         
-        3. **Advanced Action Plan Architecture**:
-           - Strategic initiatives with probability-weighted ROI
-           - Resource allocation optimization across strategic priorities
-           - Timeline optimization with critical path analysis
-           - Milestone framework with success metrics and KPIs
+        3. **Advanced Marketing Action Plan Architecture**:
+           - Marketing initiatives with probability-weighted ROI calculations and risk assessments
+           - Marketing budget allocation optimization across channels and campaigns with detailed breakdowns
+           - Campaign timeline optimization with critical path analysis and dependency mapping
+           - Marketing milestone framework with success metrics, KPIs, and performance triggers
+           - Tactical execution playbooks for each marketing channel with step-by-step implementation
+           - A/B testing frameworks for campaign optimization and performance validation
+           - Real-time performance monitoring and adjustment protocols with decision triggers
         
-        4. **Financial Strategic Modeling**:
-           - Revenue optimization with multiple scenario projections
-           - Unit economics enhancement with margin expansion strategies
-           - Customer acquisition cost optimization across channels
-           - Lifetime value maximization with retention engineering
+        4. **Marketing Financial Modeling**:
+           - Marketing ROI optimization with multiple scenario projections (bull, base, bear cases)
+           - Customer acquisition cost enhancement with conversion rate optimization strategies
+           - Customer acquisition channel optimization with detailed funnel analysis across all touchpoints
+           - Customer lifetime value maximization with retention marketing engineering and upselling frameworks
+           - Marketing attribution modeling with multi-touch attribution analysis
+           - Budget allocation optimization with dynamic reallocation based on performance
+           - Revenue forecasting with confidence intervals and probability distributions
         
-        5. **Market Domination Strategy**:
-           - Channel strategy with attribution modeling
+        5. **Market Domination Marketing Strategy**:
+           - Multi-channel marketing strategy with attribution modeling
            - Customer acquisition engine with viral coefficient optimization
            - Brand positioning with market perception management
-           - Competitive response strategy with game theory applications
+           - Competitive marketing response strategy with behavioral economics applications
         
-        6. **Growth Engineering Framework**:
-           - Exponential growth loops design and optimization
-           - Network effects amplification and platform strategies
-           - Scaling operations with efficiency optimization
-           - International expansion with market entry strategies
+        6. **Marketing Growth Engineering Framework**:
+           - Exponential marketing growth loops design and optimization
+           - Network effects amplification and referral marketing strategies
+           - Marketing scaling operations with efficiency optimization
+           - International marketing expansion with localization strategies
         
-        7. **Risk Management and Contingency Planning**:
-           - Strategic risk assessment with Monte Carlo modeling
-           - Scenario planning with adaptive strategy frameworks
-           - Competitive threat response with counter-strategy protocols
-           - Market volatility hedging and diversification strategies
+        7. **Marketing Risk Management and Contingency Planning**:
+           - Marketing risk assessment with scenario modeling
+           - Campaign performance planning with adaptive marketing frameworks
+           - Competitive marketing threat response with counter-campaign protocols
+           - Market volatility hedging and marketing diversification strategies
         
-        8. **Performance Monitoring and Optimization**:
-           - Strategic dashboard design with real-time KPI tracking
-           - Performance optimization with continuous improvement cycles
-           - Strategic pivoting frameworks with decision triggers
-           - Value creation measurement with attribution analysis
+        8. **Marketing Performance Monitoring and Optimization**:
+           - Marketing dashboard design with real-time KPI tracking
+           - Campaign performance optimization with continuous improvement cycles
+           - Marketing pivoting frameworks with decision triggers
+           - Marketing ROI measurement with multi-touch attribution analysis
         
-        🚀 STRATEGIC EXCELLENCE STANDARDS:
-        - Apply advanced strategic frameworks (Porter, Blue Ocean, Platform Strategy)
-        - Use quantitative modeling for all strategic recommendations
-        - Provide probability-weighted outcome analysis
-        - Include competitive response modeling and counter-strategies
-        - Design for sustainable competitive advantage and market leadership
+        🚀 MARKETING EXCELLENCE STANDARDS:
+        - Apply advanced marketing frameworks (Customer Journey, Marketing Mix, Growth Loops, AARRR)
+        - Use quantitative modeling for all marketing recommendations
+        - Provide probability-weighted marketing outcome analysis
+        - Include competitive marketing response modeling and counter-strategies
+        - Design for sustainable marketing advantage and brand leadership
         
-        💡 INNOVATION REQUIREMENTS:
-        - Identify breakthrough growth opportunities
-        - Design disruptive strategic moves
-        - Create unfair competitive advantages
-        - Develop proprietary strategic assets
+        💡 MARKETING INNOVATION REQUIREMENTS:
+        - Identify breakthrough marketing growth opportunities
+        - Design disruptive marketing campaigns and strategies
+        - Create unfair marketing competitive advantages
+        - Develop proprietary marketing assets and intellectual property
         
         {self.__quantum_incentive_system()}
         """
         
         return Task(
             description=master_description,
-            expected_output="Master strategic architecture with billion-dollar framework design, exponential growth strategies, competitive moat construction, and comprehensive implementation roadmap.",
+            expected_output="Master marketing architecture with billion-dollar marketing framework design, exponential marketing growth strategies, brand moat construction, and comprehensive marketing implementation roadmap.",
             agent=agent
         )
     
@@ -324,66 +337,66 @@ class QuantumStrategicTasks:
             agent=agent
         )
     
-    def quantum_market_analysis_task(self, agent, business_info, business_goals):
-        """Quantum market analysis with predictive intelligence"""
+    def quantum_consumer_insights_task(self, agent, business_info, business_goals):
+        """Quantum consumer insights analysis with predictive behavioral intelligence"""
         
         market_description = f"""
-        🌐 QUANTUM MARKET ANALYSIS MISSION
+        🌐 QUANTUM CONSUMER INSIGHTS MISSION
         
-        Execute quantum-level market analysis for:
+        Execute quantum-level consumer behavior analysis for:
         Business Context: {business_info}
-        Strategic Goals: {business_goals}
+        Marketing Goals: {business_goals}
         
-        🔬 QUANTUM ANALYSIS REQUIREMENTS:
+        🔬 QUANTUM CONSUMER ANALYSIS REQUIREMENTS:
         
-        1. **Market Size and Growth Modeling**:
-           - Total Addressable Market (TAM) calculation with growth projections
-           - Serviceable Addressable Market (SAM) analysis with penetration rates
-           - Serviceable Obtainable Market (SOM) with realistic capture scenarios
-           - Market growth rate analysis with trend extrapolation
+        1. **Consumer Market Size and Behavior Modeling**:
+           - Total Addressable Consumer Market (TAM) calculation with behavioral growth projections
+           - Serviceable Addressable Consumer Market (SAM) analysis with engagement penetration rates
+           - Serviceable Obtainable Consumer Market (SOM) with realistic acquisition scenarios
+           - Consumer engagement rate analysis with trend extrapolation
         
-        2. **Customer Behavior Prediction**:
-           - Buying behavior pattern analysis with psychological profiling
-           - Price sensitivity modeling with elasticity calculations
-           - Adoption curve prediction with innovation diffusion modeling
-           - Churn risk assessment with retention probability scoring
+        2. **Consumer Behavior Prediction**:
+           - Buying behavior pattern analysis with deep psychological profiling
+           - Price sensitivity modeling with purchase elasticity calculations
+           - Product adoption curve prediction with consumer innovation diffusion modeling
+           - Customer churn risk assessment with retention probability scoring
         
-        3. **Technology Disruption Assessment**:
-           - Emerging technology impact evaluation
-           - Disruption probability calculation with timeline estimation
-           - Technology adoption curve analysis
-           - Innovation cycle timing and market readiness assessment
+        3. **Digital Marketing Channel Assessment**:
+           - Emerging marketing channel impact evaluation
+           - Channel disruption probability calculation with timeline estimation
+           - Marketing technology adoption curve analysis
+           - Consumer engagement cycle timing and channel readiness assessment
         
-        4. **Investment and Funding Intelligence**:
-           - Venture capital flow analysis and trend identification
-           - Funding round timing prediction with success probability
-           - Investor sentiment analysis and market confidence scoring
-           - Valuation trend analysis with multiple expansion/contraction
+        4. **Consumer Spending and Purchase Intelligence**:
+           - Consumer spending flow analysis and purchase trend identification
+           - Purchase decision timing prediction with intent probability
+           - Consumer sentiment analysis and brand confidence scoring
+           - Purchase value trend analysis with spending expansion/contraction
         
-        5. **Regulatory and Compliance Forecasting**:
-           - Regulatory change probability assessment
-           - Compliance requirement prediction with cost estimation
-           - Policy impact analysis on market dynamics
-           - International expansion regulatory complexity analysis
+        5. **Marketing Regulatory and Privacy Forecasting**:
+           - Marketing regulation change probability assessment
+           - Privacy compliance requirement prediction with implementation cost estimation
+           - Policy impact analysis on marketing dynamics
+           - International marketing expansion regulatory complexity analysis
         
-        6. **Market Sentiment and Macro-Economic Analysis**:
-           - Consumer confidence impact on market demand
-           - Economic cycle positioning and recession resilience
-           - Inflation and interest rate impact on business model
-           - Global market trends and localization opportunities
+        6. **Consumer Sentiment and Behavioral Analysis**:
+           - Consumer confidence impact on purchase behavior
+           - Economic cycle positioning and recession-resistant marketing strategies
+           - Inflation and price sensitivity impact on consumer behavior
+           - Global consumer trends and localization marketing opportunities
         
-        🎯 PREDICTIVE INTELLIGENCE DELIVERABLES:
-        - Market opportunity scoring with probability-weighted outcomes
-        - Timing optimization for market entry and expansion
-        - Risk-adjusted market projections with confidence intervals
-        - Strategic positioning recommendations for market leadership
+        🎯 PREDICTIVE CONSUMER INTELLIGENCE DELIVERABLES:
+        - Consumer opportunity scoring with probability-weighted acquisition outcomes
+           - Timing optimization for marketing campaign launch and scaling
+           - Risk-adjusted consumer projections with confidence intervals
+           - Marketing positioning recommendations for consumer leadership
         
         {self.__quantum_incentive_system()}
         """
         
         return Task(
             description=market_description,
-            expected_output="Quantum market analysis with predictive intelligence, market opportunity scoring, timing optimization, and strategic positioning recommendations.",
+            expected_output="Quantum consumer insights analysis with predictive behavioral intelligence, consumer opportunity scoring, campaign timing optimization, and marketing positioning recommendations.",
             agent=agent
         )
     
