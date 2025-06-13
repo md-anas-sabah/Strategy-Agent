@@ -15,7 +15,22 @@ class QuantumStrategicTasks:
         self.strategic_models = {}
         
     def __quantum_incentive_system(self):
-        return "Execute at QUANTUM EXCELLENCE level - Your performance directly impacts billion-dollar strategic outcomes!"
+        return """Execute at QUANTUM EXCELLENCE level with 100% ACCURACY VALIDATION:
+        
+        🎯 PERFORMANCE STANDARDS:
+        - Every recommendation must achieve 95%+ confidence score
+        - All analysis must include statistical validation and confidence intervals
+        - Use chain-of-thought reasoning with step-by-step validation
+        - Cross-reference findings with multiple independent sources
+        - Your performance directly impacts billion-dollar strategic outcomes!
+        
+        🔍 ACCURACY REQUIREMENTS:
+        - Validate all data points using ensemble methods
+        - Include uncertainty quantification for all predictions
+        - Flag any assumptions or limitations in analysis
+        - Provide alternative scenarios with probability weights
+        - Use Monte Carlo simulation for risk assessment
+        """
 
     def quantum_marketing_intelligence_task(self, agent, business_info, business_goals, budget_info, current_marketing):
         """Revolutionary quantum marketing intelligence analysis"""
@@ -25,7 +40,32 @@ class QuantumStrategicTasks:
         competitors = self._identify_competitors(business_info, industry)
         
         advanced_description = f"""
-        🚀 QUANTUM MARKETING INTELLIGENCE MISSION
+        🚀 QUANTUM MARKETING INTELLIGENCE MISSION - 100% ACCURACY VALIDATION PROTOCOL
+        
+        CRITICAL: You must follow the SYSTEMATIC REASONING FRAMEWORK for 100% accuracy:
+        
+        STEP 1: DATA COLLECTION & VALIDATION
+        - Gather comprehensive data from multiple verified sources
+        - Cross-validate all information using ensemble validation methods
+        - Assign confidence scores (0-100%) to each data point
+        - Flag any uncertainties or data limitations
+        
+        STEP 2: HYPOTHESIS FORMATION
+        - Create multiple competing hypotheses for each marketing challenge
+        - Use structured problem decomposition
+        - Apply first-principles thinking to avoid biases
+        
+        STEP 3: EVIDENCE-BASED ANALYSIS
+        - Use statistical methods to evaluate each hypothesis
+        - Apply marketing science frameworks (AARRR, ICE, North Star)
+        - Conduct sensitivity analysis for key assumptions
+        - Include confidence intervals for all quantitative predictions
+        
+        STEP 4: CROSS-VALIDATION
+        - Validate findings against industry benchmarks
+        - Compare with historical performance data
+        - Use peer review validation protocols
+        - Confirm with multiple independent sources
         
         Execute comprehensive quantum-level marketing analysis for:
         Business: {business_info}
