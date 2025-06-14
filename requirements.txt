@@ -1,21 +1,39 @@
+# Core CrewAI and LangChain dependencies
 crewai
 langchain
 langchain-community
 langchain-openai
 openai
 python-decouple
-duckduckgo-search
-markdown
-selenium
-beautifulsoup4
-requests
-lxml[html_clean]
+python-dotenv
+
+# Data processing and analysis
 pandas
 numpy
+markdown
+
+# Web scraping and API requests
+requests
+beautifulsoup4
+lxml[html_clean]
+aiohttp
+selenium
+
+# Financial and market data
 yfinance
-tweepy
+
+# Natural language processing
+vaderSentiment
 feedparser
 textblob
-vaderSentiment
-python-dotenv
-aiohttp
+
+# Free social media APIs (India-friendly, no Twitter/TikTok)
+praw  # Reddit API (free)
+googlesearch-python  # Google Search (free with limits)
+
+# Search functionality
+duckduckgo-search
+
+# Optional dependencies for enhanced functionality
+# weasyprint  # PDF generation (optional)
+# google-api-python-client  # YouTube Data API (optional)

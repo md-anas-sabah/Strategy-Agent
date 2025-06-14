@@ -162,7 +162,7 @@ class AdvancedIntelligenceEngine:
             # Use real-time data if available
             market_data = external_data['market_intelligence']
             
-            # Enhance with analysis
+            # Enhance with comprehensive analysis including social media, ads, and SEO
             enhanced_intelligence = {
                 'real_time_market_data': market_data,
                 'industry_analysis': self._analyze_real_time_trends(market_data.get('industry_analysis', {})),
@@ -170,9 +170,13 @@ class AdvancedIntelligenceEngine:
                 'sentiment_analysis': self._process_sentiment_data(market_data.get('news_sentiment', {}), market_data.get('social_sentiment', {})),
                 'financial_intelligence': self._process_financial_data(market_data.get('stock_data', {})),
                 'funding_landscape': self._analyze_funding_trends(market_data.get('funding_data', {})),
-                'confidence_score': self._calculate_intelligence_confidence(market_data),
-                'data_freshness': market_data.get('timestamp', datetime.now().isoformat()),
-                'sources_used': market_data.get('data_sources_count', 0)
+                'social_media_intelligence': self._process_social_media_data(external_data.get('social_media_intelligence', {})),
+                'competitor_ads_intelligence': self._process_competitor_ads_data(external_data.get('competitor_ads_intelligence', {})),
+                'seo_intelligence': self._process_seo_data(external_data.get('seo_intelligence', {})),
+                'marketing_opportunities': self._identify_marketing_opportunities(external_data.get('social_media_intelligence', {}), external_data.get('competitor_ads_intelligence', {}), external_data.get('seo_intelligence', {})),
+                'confidence_score': self._calculate_comprehensive_intelligence_confidence(external_data),
+                'data_freshness': external_data.get('timestamp', datetime.now().isoformat()),
+                'sources_used': external_data.get('data_sources_count', 0)
             }
             
             return enhanced_intelligence
@@ -632,6 +636,151 @@ class AdvancedIntelligenceEngine:
             'market_sources': random.randint(2, 6),
             'expert_sources': random.randint(1, 4)
         }
+    
+    def _process_social_media_data(self, social_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Process social media intelligence data"""
+        if not social_data or 'error' in social_data:
+            return {'status': 'unavailable', 'insights': []}
+        
+        return {
+            'platform_performance': social_data.get('business_analysis', {}),
+            'competitor_social_presence': social_data.get('competitor_analysis', {}),
+            'industry_trends': social_data.get('industry_trends', {}),
+            'content_insights': social_data.get('content_analysis', {}),
+            'influencer_opportunities': social_data.get('influencer_analysis', {}),
+            'hashtag_performance': social_data.get('hashtag_analysis', {}),
+            'recommendations': self._generate_social_media_recommendations(social_data)
+        }
+    
+    def _process_competitor_ads_data(self, ads_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Process competitor advertising intelligence data"""
+        if not ads_data or 'error' in ads_data:
+            return {'status': 'unavailable', 'insights': []}
+        
+        return {
+            'competitor_strategies': ads_data.get('competitor_ad_strategies', {}),
+            'platform_insights': ads_data.get('platform_analysis', {}),
+            'creative_trends': ads_data.get('creative_analysis', {}),
+            'budget_analysis': ads_data.get('budget_estimates', {}),
+            'performance_benchmarks': ads_data.get('performance_insights', {}),
+            'ad_trends': ads_data.get('ad_trends', {}),
+            'recommendations': ads_data.get('recommendations', {})
+        }
+    
+    def _process_seo_data(self, seo_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Process SEO intelligence data"""
+        if not seo_data or 'error' in seo_data:
+            return {'status': 'unavailable', 'insights': []}
+        
+        return {
+            'website_audit': seo_data.get('business_seo_audit', {}),
+            'competitor_seo': seo_data.get('competitor_seo_analysis', {}),
+            'keyword_opportunities': seo_data.get('keyword_analysis', {}),
+            'content_gaps': seo_data.get('content_opportunities', {}),
+            'technical_insights': seo_data.get('technical_seo_insights', {}),
+            'backlink_opportunities': seo_data.get('backlink_analysis', {}),
+            'local_seo': seo_data.get('local_seo_analysis', {}),
+            'recommendations': seo_data.get('seo_recommendations', {})
+        }
+    
+    def _identify_marketing_opportunities(self, social_data: Dict, ads_data: Dict, seo_data: Dict) -> Dict[str, Any]:
+        """Identify cross-channel marketing opportunities"""
+        opportunities = {
+            'high_impact_opportunities': [],
+            'quick_wins': [],
+            'long_term_strategies': [],
+            'budget_recommendations': {},
+            'channel_synergies': []
+        }
+        
+        # Analyze social media opportunities
+        if social_data and 'error' not in social_data:
+            if social_data.get('business_analysis', {}).get('overall_metrics', {}).get('total_followers', 0) < 10000:
+                opportunities['high_impact_opportunities'].append('Increase social media following through targeted content strategy')
+            
+            if social_data.get('industry_trends', {}).get('content_performance', {}).get('video_engagement', 0) > 0.1:
+                opportunities['quick_wins'].append('Create more video content for higher engagement')
+        
+        # Analyze advertising opportunities
+        if ads_data and 'error' not in ads_data:
+            trending_formats = ads_data.get('creative_analysis', {}).get('trending_formats', {})
+            if trending_formats.get('video', {}).get('growth_rate', 0) > 0.2:
+                opportunities['high_impact_opportunities'].append('Invest in video advertising campaigns')
+            
+            if ads_data.get('platform_analysis', {}).get('tiktok', {}).get('competition_level') == 'growing':
+                opportunities['quick_wins'].append('Early entry into TikTok advertising before competition increases')
+        
+        # Analyze SEO opportunities
+        if seo_data and 'error' not in seo_data:
+            keyword_gaps = seo_data.get('keyword_analysis', {}).get('keyword_gaps', [])
+            if keyword_gaps:
+                opportunities['long_term_strategies'].append(f'Target untapped keywords: {", ".join(keyword_gaps[:3])}')
+            
+            technical_issues = seo_data.get('business_seo_audit', {}).get('technical_issues', {})
+            if technical_issues.get('broken_links', 0) > 5:
+                opportunities['quick_wins'].append('Fix technical SEO issues for immediate ranking improvements')
+        
+        # Cross-channel synergies
+        opportunities['channel_synergies'] = [
+            'Use high-performing social content themes for SEO content creation',
+            'Repurpose successful ad creatives for social media organic posts',
+            'Target social media audiences with SEO-driven content topics',
+            'Use social media hashtag research for SEO keyword expansion'
+        ]
+        
+        return opportunities
+    
+    def _generate_social_media_recommendations(self, social_data: Dict[str, Any]) -> List[str]:
+        """Generate social media recommendations"""
+        recommendations = []
+        
+        # Analyze engagement rates
+        business_metrics = social_data.get('business_analysis', {}).get('overall_metrics', {})
+        avg_engagement = business_metrics.get('average_engagement_rate', 0)
+        
+        if avg_engagement < 0.03:
+            recommendations.append('Improve content engagement through interactive posts and user-generated content')
+        
+        # Analyze platform diversity
+        platform_diversity = business_metrics.get('platform_diversity', 0)
+        if platform_diversity < 3:
+            recommendations.append('Expand to additional social media platforms for broader reach')
+        
+        # Industry trends analysis
+        trending_content = social_data.get('content_analysis', {}).get('popular_content_formats', [])
+        if 'short_videos' in trending_content:
+            recommendations.append('Increase short-form video content production for better engagement')
+        
+        return recommendations
+    
+    def _calculate_comprehensive_intelligence_confidence(self, data: Dict[str, Any]) -> float:
+        """Calculate confidence score for comprehensive intelligence data"""
+        confidence_factors = []
+        
+        # Base market data confidence
+        if data.get('market_intelligence') and 'error' not in data['market_intelligence']:
+            confidence_factors.append(0.85)
+        
+        # Social media data confidence
+        if data.get('social_media_intelligence') and 'error' not in data['social_media_intelligence']:
+            confidence_factors.append(0.80)
+        
+        # Advertising data confidence
+        if data.get('competitor_ads_intelligence') and 'error' not in data['competitor_ads_intelligence']:
+            confidence_factors.append(0.75)
+        
+        # SEO data confidence
+        if data.get('seo_intelligence') and 'error' not in data['seo_intelligence']:
+            confidence_factors.append(0.78)
+        
+        # Data source diversity bonus
+        data_sources = data.get('data_sources_count', 0)
+        confidence_factors.append(min(1.0, data_sources / 10))
+        
+        if not confidence_factors:
+            return 0.65
+        
+        return round(sum(confidence_factors) / len(confidence_factors), 3)
 
 
 class WorldClassAgents:
