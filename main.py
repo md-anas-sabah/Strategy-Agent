@@ -1935,11 +1935,12 @@ class StrategicOutcome:
 class QuantumStrategyOrchestrator:
     """Revolutionary quantum strategy orchestration system that outperforms all existing AI solutions"""
     
-    def __init__(self, business_info, business_goals, budget_info, current_marketing):
+    def __init__(self, business_info, business_goals, budget_info, current_marketing, competitor_list=None):
         self.business_info = business_info
         self.business_goals = business_goals
         self.budget_info = budget_info
         self.current_marketing = current_marketing
+        self.competitor_list = competitor_list or []
         
         # Advanced AI models for different cognitive tasks with 100% accuracy optimization
         self.quantum_llm = ChatOpenAI(model_name="gpt-4-turbo-preview", temperature=0.05, max_tokens=4000)
@@ -2042,12 +2043,19 @@ class QuantumStrategyOrchestrator:
         print("\n🌐 Phase 0.5: Real-Time Market Intelligence Collection")
         print("=" * 70)
         
-        # Extract industry and competitors from business info
+        # Extract industry and determine competitors
         industry = self._extract_industry_from_business_info()
-        competitors = self._extract_competitors_from_business_info()
         
-        print(f"📊 Collecting real-time data for industry: {industry}")
-        print(f"🏢 Analyzing competitors: {', '.join(competitors[:5])}")
+        # Use user-specified competitors if provided, otherwise use AI-generated ones
+        if self.competitor_list:
+            competitors = self.competitor_list
+            print(f"📊 Collecting real-time data for industry: {industry}")
+            print(f"🏆 Analyzing USER-SPECIFIED competitors: {', '.join(competitors)}")
+            print("✅ Using precision competitive intelligence based on your specified competitors!")
+        else:
+            competitors = self._extract_competitors_from_business_info()
+            print(f"📊 Collecting real-time data for industry: {industry}")
+            print(f"🏢 Analyzing AI-GENERATED competitors: {', '.join(competitors[:5])}")
         
         # Collect real-time data in parallel
         tasks = [
@@ -2731,19 +2739,37 @@ def collect_business_information():
     📈 Describe your current marketing situation (channels used, campaigns running, performance metrics, challenges, what's working/not working):
     >>> """)).strip()
     
-    return business_info, business_goals, budget_info, current_marketing
+    # Competitor Information
+    print("\n🕵️ SECTION 5: COMPETITOR INTELLIGENCE")
+    print("-" * 40)
+    print("💡 Hey, why don't you highlight some competitors?")
+    print("This will help us perform precise competitive analysis and web scraping for accurate market positioning!")
+    competitors = input(dedent("""
+    🏆 Please list your main competitors (separate by commas, e.g., "Company A, Company B, Company C"):
+    >>> """)).strip()
+    
+    # Process competitors list
+    competitor_list = []
+    if competitors:
+        competitor_list = [comp.strip() for comp in competitors.split(",") if comp.strip()]
+        print(f"\n✅ Great! We'll analyze these {len(competitor_list)} competitors: {', '.join(competitor_list)}")
+    else:
+        print("\n⚠️ No competitors specified. We'll use AI-generated competitor analysis.")
+    
+    return business_info, business_goals, budget_info, current_marketing, competitor_list
 
 if __name__ == "__main__":
     try:
         # Collect business information via enhanced CLI
-        business_info, business_goals, budget_info, current_marketing = collect_business_information()
+        business_info, business_goals, budget_info, current_marketing, competitor_list = collect_business_information()
         
         # Initialize and run the quantum marketing strategy orchestrator
         quantum_orchestrator = QuantumStrategyOrchestrator(
             business_info=business_info,
             business_goals=business_goals,
             budget_info=budget_info,
-            current_marketing=current_marketing
+            current_marketing=current_marketing,
+            competitor_list=competitor_list
         )
         
         # Execute quantum strategy generation
