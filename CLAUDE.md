@@ -12,6 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pip install -r requirements.txt` - Install all Python dependencies
 - Set up `.env` file with required API keys:
   - `OPENAI_API_KEY` - Required for OpenAI GPT models
+  - `ANTHROPIC_API_KEY` - Required for Claude 3.5 Sonnet Refiner Agent
   - `YOUTUBE_API_KEY` - Optional for YouTube data scraping
   - `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` - Optional for Reddit analysis
 
@@ -33,15 +34,16 @@ This is a CrewAI-based multi-agent system for generating comprehensive marketing
 - Outputs structured HTML and Markdown reports with accompanying JSON data
 
 **Agent System** (`agents.py`):
-- `WorldClassAgents` class contains 6 specialized AI agents:
+- `WorldClassAgents` class contains 7 specialized AI agents:
   - `quantum_marketing_intelligence_agent()` - Marketing analysis and customer insights
   - `elite_competitive_intelligence_agent()` - Competitor analysis and threat assessment
   - `advanced_marketing_performance_agent()` - Campaign optimization and performance metrics
   - `master_marketing_architect_agent()` - Strategic synthesis and framework design
   - `supreme_strategic_validator_agent()` - Quality assurance and validation
   - `quantum_consumer_insights_agent()` - Consumer behavior and market analysis
+  - `world_class_claude_refiner_agent()` - **NEW: Claude 3.5 Sonnet Refiner Agent** - World-class strategy refinement and enhancement
 - Each agent has detailed role definitions, capabilities, and validation protocols
-- Uses different OpenAI models (GPT-3.5, GPT-4, GPT-4-turbo) based on task complexity
+- Uses hybrid AI approach: OpenAI models (GPT-3.5, GPT-4, GPT-4-turbo) for analysis + Claude 3.5 Sonnet for final strategy refinement
 
 **Task Management** (`tasks.py`):
 - `QuantumStrategicTasks` class defines structured tasks for each agent
@@ -85,10 +87,11 @@ This is a CrewAI-based multi-agent system for generating comprehensive marketing
 ### Data Flow
 1. User provides business information through interactive prompts
 2. System collects real-time market data from multiple sources
-3. Specialized agents analyze different aspects (marketing, competition, consumers)
+3. Specialized OpenAI agents analyze different aspects (marketing, competition, consumers)
 4. Master architect synthesizes findings into comprehensive strategy
 5. Validator ensures quality and accuracy
-6. Reports are generated in multiple formats and saved to timestamped directories
+6. **NEW: Claude 3.5 Sonnet Refiner transforms strategy into world-class Fortune 100 consulting standards**
+7. Reports are generated in multiple formats and saved to timestamped directories
 
 ### Configuration Notes
 - The system is designed to work with free APIs where possible

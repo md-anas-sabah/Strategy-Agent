@@ -48,6 +48,7 @@ from tasks import QuantumStrategicTasks
 from marketing_resources import MarketingResourcesDB, get_marketing_recommendations, get_quick_start_guide
 
 os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
+os.environ["ANTHROPIC_API_KEY"] = config("ANTHROPIC_API_KEY")
 # Remove organization header to avoid conflicts
 if "OPENAI_ORGANIZATION" in os.environ:
     del os.environ["OPENAI_ORGANIZATION"]
@@ -2167,8 +2168,8 @@ class QuantumStrategyOrchestrator:
             self.agents = WorldClassAgents(real_time_data=self.real_time_data)
             self.tasks = QuantumStrategicTasks(real_time_data=self.real_time_data)
             
-            quantum_marketing_analyst = self.agents.quantum_marketing_intelligence_agent()
-            elite_competitive_analyst = self.agents.elite_competitive_intelligence_agent()
+            quantum_marketing_analyst = self.agents.marketing_intelligence_agent()
+            elite_competitive_analyst = self.agents.competitive_intelligence_agent()
             marketing_performance_strategist = self.agents.advanced_marketing_performance_agent()
             master_marketing_architect = self.agents.master_marketing_architect_agent()
             quantum_consumer_analyst = self.agents.quantum_consumer_insights_agent()
@@ -2177,12 +2178,12 @@ class QuantumStrategyOrchestrator:
             print("✅ All quantum MARKETING agents initialized with advanced capabilities")
             print(f"⚡ Initialization time: {time.time() - execution_start:.2f} seconds")
             
-            # Phase 1: Parallel Marketing Intelligence Gathering (Revolutionary Approach)
-            print("\n🧠 Phase 1: Parallel Quantum MARKETING Intelligence Gathering")
+            # Phase 1: Marketing Intelligence Analysis
+            print("\n🧠 Phase 1: Marketing Intelligence Analysis")
             print("=" * 70)
             
             # Create advanced marketing tasks
-            marketing_intelligence_task = self.tasks.quantum_marketing_intelligence_task(
+            marketing_intelligence_task = self.tasks.marketing_intelligence_task(
                 quantum_marketing_analyst, self.business_info, self.business_goals, 
                 self.budget_info, self.current_marketing
             )
@@ -2227,13 +2228,13 @@ class QuantumStrategyOrchestrator:
                         marketing_intelligence += f"  Result: {example['result']}\n"
                         marketing_intelligence += f"  Learn more: {example['link']}\n"
             
-            print(f"✅ Phase 1 MARKETING INTELLIGENCE completed in {phase_1_time:.2f} seconds (3x faster than sequential)")
+            print(f"✅ Phase 1 Marketing Intelligence completed in {phase_1_time:.2f} seconds")
             
-            # Phase 2: Elite Competitive Intelligence (Advanced Parallel Processing)
-            print("\n🕵️ Phase 2: Elite Competitive Intelligence Operation")
+            # Phase 2: Competitive Intelligence Analysis
+            print("\n🕵️ Phase 2: Competitive Intelligence Analysis")
             print("=" * 70)
             
-            competitive_intelligence_task = self.tasks.elite_competitive_intelligence_task(
+            competitive_intelligence_task = self.tasks.competitive_intelligence_task(
                 elite_competitive_analyst, self.business_info, self.business_goals
             )
             
@@ -2248,7 +2249,7 @@ class QuantumStrategyOrchestrator:
             phase_2_time = time.time() - phase_2_start
             
             competitive_intelligence = str(competitive_result.raw) if hasattr(competitive_result, 'raw') else str(competitive_result)
-            print(f"✅ Elite competitive intelligence completed in {phase_2_time:.2f} seconds")
+            print(f"✅ Competitive intelligence completed in {phase_2_time:.2f} seconds")
             
             # Phase 3: Master Strategic Architecture (Quantum Enhancement)
             print("\n🏗️ Phase 3: Master Strategic Architecture Development")
@@ -2293,51 +2294,98 @@ class QuantumStrategyOrchestrator:
             validation_report = str(validation_result.raw) if hasattr(validation_result, 'raw') else str(validation_result)
             print(f"✅ Supreme validation completed in {phase_4_time:.2f} seconds")
             
+            # Phase 5: Strategic Enhancement and Refinement
+            print("\n🎨 Phase 5: Strategic Enhancement and Refinement")
+            print("=" * 70)
+            print("🚀 Activating strategy refinement and enhancement analysis")
+            
+            # Create the Strategy Refiner Agent
+            claude_refiner_agent = self.agents.strategy_refiner_agent()
+            
+            # Combine all marketing intelligence for refinement
+            all_marketing_intelligence = {
+                'marketing_intelligence': marketing_intelligence,
+                'competitive_intelligence': competitive_intelligence,
+                'marketing_architecture': marketing_architecture,
+                'validation_report': validation_report
+            }
+            
+            # Create the refinement task
+            refinement_task = self.tasks.strategy_refiner_task(
+                claude_refiner_agent, all_marketing_intelligence, self.business_info, self.business_goals
+            )
+            
+            refiner_crew = Crew(
+                agents=[claude_refiner_agent],
+                tasks=[refinement_task],
+                verbose=True
+            )
+            
+            phase_5_start = time.time()
+            refined_result = refiner_crew.kickoff()
+            phase_5_time = time.time() - phase_5_start
+            
+            refined_marketing_strategy = str(refined_result.raw) if hasattr(refined_result, 'raw') else str(refined_result)
+            print(f"✅ Strategy refinement completed in {phase_5_time:.2f} seconds")
+            print("🎯 Strategy enhanced to professional consulting standards")
+            
             # Calculate total execution time and performance metrics
             total_execution_time = time.time() - execution_start
             quality_score = self._calculate_quality_score(marketing_intelligence, competitive_intelligence, marketing_architecture)
             
-            print(f"\n📊 QUANTUM MARKETING PERFORMANCE METRICS - 100% ACCURACY VALIDATED:")
-            print(f"⚡ Total marketing execution time: {total_execution_time:.2f} seconds")
-            print(f"🏆 Marketing quality score: {quality_score:.1f}/100 (VALIDATED)")
-            print(f"🎯 Accuracy validation: 100% with confidence intervals")
-            print(f"🚀 Performance vs. traditional MARKETING AI: {self._calculate_performance_advantage():.1f}x faster")
+            print(f"\n📊 MARKETING STRATEGY PERFORMANCE METRICS:")
+            print(f"⚡ Total execution time: {total_execution_time:.2f} seconds")
+            print(f"🏆 Strategy quality score: {quality_score:.1f}/100")
+            print(f"🎯 Analysis validation: Comprehensive with confidence intervals")
+            print(f"🚀 Performance advantage: {self._calculate_performance_advantage():.1f}x faster than traditional methods")
             print(f"🔬 Validation methods: Ensemble models + Statistical analysis + Cross-verification")
+            print(f"✨ Enhancement: Professional strategy refinement applied")
             
-            # Phase 5: Advanced Marketing Report Generation
-            print("\n📊 Phase 5: Quantum MARKETING Report Generation")
+            # Phase 6: Marketing Strategy Report Generation
+            print("\n📊 Phase 6: Marketing Strategy Report Generation")
             print("=" * 70)
             
             output_dir = self.create_output_directory()
             
-            # Create quantum-enhanced comprehensive MARKETING report
-            md_content = f"""# 🚀 QUANTUM MARKETING STRATEGY MASTERPIECE
-**Generated by:** World's Most Advanced AI Marketing System  
+            # Create comprehensive marketing strategy report with professional analysis
+            md_content = f"""# 🚀 COMPREHENSIVE MARKETING STRATEGY REPORT
+**Generated by:** Advanced AI Marketing Analysis System  
 **Date:** {datetime.now().strftime("%B %d, %Y at %I:%M %p")}  
 **Execution Time:** {total_execution_time:.2f} seconds
+**Enhancement Level:** Professional Consulting Standards
 
 ## 🎯 Executive Marketing Summary
-This quantum-enhanced marketing masterpiece outlines a revolutionary roadmap to achieve exponential marketing growth and market domination: {self.business_goals}
+This comprehensive marketing strategy has been developed through multi-agent analysis and strategic refinement to provide actionable recommendations for achieving your marketing objectives: {self.business_goals}
 
 **Key Marketing Performance Indicators:**
-- Marketing Intelligence Depth: Advanced quantum consumer analysis
-- Competitive Marketing Advantage: Sustainable brand moat construction
-- Marketing Growth Trajectory: Exponential scaling framework
-- Marketing Risk Mitigation: Comprehensive campaign contingency planning
+- Marketing Intelligence: Comprehensive consumer and market analysis
+- Competitive Advantage: Strategic brand positioning and differentiation
+- Growth Strategy: Systematic scaling and expansion framework
+- Risk Management: Comprehensive campaign planning and contingency strategies
+- Enhancement Level: Professional strategic analysis and refinement
 
 ---
 
-## 🧠 Quantum Marketing Intelligence Analysis
+## 🎨 STRATEGIC MARKETING RECOMMENDATIONS
+**Enhanced through Advanced Analysis and Strategic Refinement**
+
+{refined_marketing_strategy}
+
+---
+
+## 📊 Supporting Intelligence Analysis
+
+### 🧠 Marketing Intelligence Analysis
 {marketing_intelligence}
 
 ---
 
-## 🕵️ Elite Competitive Marketing Intelligence & Consumer Analysis  
+### 🕵️ Competitive Intelligence & Market Analysis  
 {competitive_intelligence}
 
 ---
 
-## 🏗️ Master Marketing Architecture & Implementation Plan
+## 🏗️ Marketing Strategy Framework & Implementation Plan
 {marketing_architecture}
 
 ## 📚 Marketing Resources & References
@@ -2361,7 +2409,7 @@ This quantum-enhanced marketing masterpiece outlines a revolutionary roadmap to 
 
 ---
 
-## ⚡ Supreme Strategic Validation Report
+## ⚡ Strategic Validation and Quality Assurance
 {validation_report}
 
 ---
@@ -2420,10 +2468,13 @@ This strategic framework provides a revolutionary path to achieving sustainable 
                 "marketing_intelligence": str(marketing_intelligence),
                 "competitor_analysis": str(competitive_intelligence),
                 "marketing_strategy": str(marketing_architecture),
+                "refined_strategy": str(refined_marketing_strategy),
                 "validation_report": str(validation_report),
                 "execution_time": total_execution_time,
                 "quality_score": quality_score,
                 "performance_advantage": self._calculate_performance_advantage(),
+                "strategic_enhancement": True,
+                "enhancement_level": "Professional Consulting Standards",
                 "generated_at": datetime.now().isoformat(),
                 "reference_links": self.real_time_data.get('marketing_resources', {}).get('reference_links', {}),
                 "example_campaigns": self.real_time_data.get('marketing_resources', {}).get('example_campaigns', []),
@@ -2433,7 +2484,7 @@ This strategic framework provides a revolutionary path to achieving sustainable 
             
             with open(json_file, 'w', encoding='utf-8') as f:
                 json.dump(strategy_data, f, indent=2, default=str)
-            print(f"✅ Quantum intelligence data saved: {json_file}")
+            print(f"✅ Strategy intelligence data saved: {json_file}")
             
             # Create marketing strategic outcome object
             strategic_outcome = StrategicOutcome(

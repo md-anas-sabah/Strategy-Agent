@@ -33,17 +33,17 @@ class QuantumStrategicTasks:
         - Use Monte Carlo simulation for risk assessment
         """
 
-    def quantum_marketing_intelligence_task(self, agent, business_info, business_goals, budget_info, current_marketing):
-        """Revolutionary quantum marketing intelligence analysis"""
+    def marketing_intelligence_task(self, agent, business_info, business_goals, budget_info, current_marketing):
+        """Comprehensive marketing intelligence analysis"""
         
         # Extract industry and competitors for advanced intelligence
         industry = self._extract_industry(business_info)
         competitors = self._identify_competitors(business_info, industry)
         
         advanced_description = f"""
-        🚀 QUANTUM MARKETING INTELLIGENCE MISSION - 100% ACCURACY VALIDATION PROTOCOL
+        MARKETING INTELLIGENCE ANALYSIS - COMPREHENSIVE VALIDATION PROTOCOL
         
-        CRITICAL: You must follow the SYSTEMATIC REASONING FRAMEWORK for 100% accuracy:
+        Follow the SYSTEMATIC REASONING FRAMEWORK for comprehensive analysis:
         
         STEP 1: DATA COLLECTION & VALIDATION
         - Gather comprehensive data from multiple verified sources
@@ -68,15 +68,15 @@ class QuantumStrategicTasks:
         - Use peer review validation protocols
         - Confirm with multiple independent sources
         
-        Execute comprehensive quantum-level marketing analysis for:
+        Execute comprehensive marketing analysis for:
         Business: {business_info}
         Marketing Goals: {business_goals}
         Marketing Budget: {budget_info}
         Current Marketing State: {current_marketing}
         
-        📊 DELIVER COMPREHENSIVE MARKETING ANALYSIS INCLUDING:
+        DELIVER COMPREHENSIVE MARKETING ANALYSIS INCLUDING:
         
-        1. **Quantum Marketing Architecture**:
+        1. **Marketing Architecture**:
            - Marketing funnel deconstruction and conversion optimization opportunities
            - Customer acquisition channel analysis with predictive scaling models
            - Value proposition messaging enhancement recommendations
@@ -135,16 +135,16 @@ class QuantumStrategicTasks:
             agent=agent
         )
 
-    def elite_competitive_intelligence_task(self, agent, business_info, business_goals):
-        """Elite competitive intelligence with predictive threat analysis"""
+    def competitive_intelligence_task(self, agent, business_info, business_goals):
+        """Comprehensive competitive intelligence with threat analysis"""
         
         industry = self._extract_industry(business_info)
         competitors = self._identify_competitors(business_info, industry)
         
         elite_description = f"""
-        🕵️ ELITE COMPETITIVE INTELLIGENCE OPERATION
+        COMPETITIVE INTELLIGENCE ANALYSIS
         
-        Execute advanced competitive intelligence analysis for:
+        Execute comprehensive competitive intelligence analysis for:
         Target Business: {business_info}
         Strategic Objectives: {business_goals}
         Industry: {industry}
@@ -475,3 +475,128 @@ class QuantumStrategicTasks:
         }
         
         return competitor_database.get(industry, competitor_database['technology'])[:7]
+    
+    def strategy_refiner_task(self, agent, all_marketing_intelligence, business_info, business_goals):
+        """Strategic analysis refinement and enhancement task"""
+        
+        refiner_description = f"""
+        STRATEGIC MARKETING REFINEMENT AND ENHANCEMENT
+        
+        You are the strategic enhancement specialist that refines marketing strategies into professional recommendations.
+        Your mission is to take the marketing intelligence and strategic analysis and enhance it to professional consulting standards.
+        
+        MARKETING INTELLIGENCE TO REFINE:
+        Complete Marketing Intelligence Package: {all_marketing_intelligence}
+        Business Context: {business_info}
+        Strategic Objectives: {business_goals}
+        
+        YOUR REFINEMENT REQUIREMENTS:
+        
+        **1. STRATEGIC SYNTHESIS & ARCHITECTURE ENHANCEMENT**:
+        • Transform fragmented insights into a cohesive marketing strategy
+        • Create an executive-ready strategic narrative with clear logical flow
+        • Design strategic frameworks that guide business decisions
+        • Eliminate redundancies and strengthen weak strategic arguments
+        • Build compelling cause-and-effect relationships between strategies and outcomes
+        
+        **2. EXECUTIVE COMMUNICATION OPTIMIZATION**:
+        • Refine all language to boardroom-quality executive communication standards
+        • Create presentation-ready content that inspires confidence and drives action
+        • Structure information with perfect executive cadence and decision-making flow
+        • Transform technical marketing concepts into strategic business language
+        • Design compelling headlines and section structures that capture attention
+        
+        **3. STRATEGIC GAP ANALYSIS & ENHANCEMENT**:
+        • Identify missing strategic elements and fill gaps with world-class frameworks
+        • Strengthen weak recommendations with proven methodologies and case studies
+        • Add sophisticated risk assessment and contingency planning
+        • Enhance competitive positioning with deeper strategic insights
+        • Improve implementation feasibility with detailed execution roadmaps
+        
+        **4. INNOVATION & DIFFERENTIATION AMPLIFICATION**:
+        • Identify breakthrough opportunities hidden in the analysis
+        • Create unfair competitive advantages through strategic positioning
+        • Design blue ocean strategies that redefine market categories
+        • Enhance brand moats and sustainable competitive differentiation
+        • Add creative marketing innovations that competitors can't replicate
+        
+        **5. FINANCIAL & ROI OPTIMIZATION**:
+        • Enhance financial models with sophisticated scenario planning
+        • Add probability-weighted ROI projections with confidence intervals
+        • Improve budget allocation frameworks with dynamic optimization
+        • Strengthen investment justification with detailed value creation models
+        • Add advanced attribution modeling and performance measurement systems
+        
+        **6. IMPLEMENTATION EXCELLENCE ENHANCEMENT**:
+        • Transform strategic recommendations into actionable execution playbooks
+        • Add detailed timeline optimization with critical path analysis
+        • Enhance resource allocation with sophisticated planning frameworks
+        • Improve change management and organizational alignment strategies
+        • Add performance monitoring and adaptive optimization protocols
+        
+        **7. RISK MANAGEMENT & CONTINGENCY PLANNING**:
+        • Conduct rigorous strategic stress-testing across multiple scenarios
+        • Add sophisticated risk assessment matrices with mitigation strategies
+        • Enhance competitive response planning with game theory applications
+        • Improve market volatility hedging and strategic flexibility
+        • Add early warning systems and adaptive strategic frameworks
+        
+        🎯 FINAL DELIVERABLE REQUIREMENTS:
+        
+        **Create the "ULTIMATE MARKETING STRATEGY MASTERPIECE" that includes:**
+        
+        1. **Executive Summary Perfection**: 
+           - Compelling strategic narrative that captures the entire opportunity
+           - Crystal-clear value proposition and competitive positioning
+           - Quantified growth projections with confidence-inspiring precision
+           - Strategic priorities ranked by impact and execution probability
+        
+        2. **Strategic Architecture Excellence**:
+           - Sophisticated marketing frameworks worthy of Harvard Business School
+           - Elegant strategic positioning that creates sustainable advantages
+           - Advanced customer value creation engines with exponential growth potential
+           - World-class brand moat construction and competitive defensibility
+        
+        3. **Implementation Mastery**:
+           - Detailed execution roadmaps with milestone optimization
+           - Advanced resource allocation and budget optimization frameworks
+           - Sophisticated performance measurement and attribution systems
+           - Adaptive strategic frameworks for dynamic market conditions
+        
+        4. **Innovation & Breakthrough Opportunities**:
+           - Unique strategic insights that competitors haven't discovered
+           - Creative marketing innovations that drive exponential growth
+           - Blue ocean opportunities that redefine market categories
+           - Proprietary strategic assets that create unfair advantages
+        
+        🏆 WORLD-CLASS QUALITY STANDARDS:
+        
+        • Every recommendation must be actionable by real marketing teams
+        • All strategies must integrate seamlessly with existing business operations
+        • Financial projections must be defensible under rigorous scrutiny
+        • Strategic frameworks must be scalable across market conditions
+        • Content quality must meet Fortune 100 boardroom presentation standards
+        • Innovation level must create sustainable competitive advantages
+        
+        🚀 ENHANCEMENT EXCELLENCE CRITERIA:
+        
+        Your refined strategy must:
+        ✓ Inspire confidence and drive immediate strategic action
+        ✓ Create measurable competitive advantages and market differentiation
+        ✓ Generate exponential growth opportunities with calculated risks
+        ✓ Provide sophisticated contingency planning for market volatility
+        ✓ Establish sustainable strategic moats and long-term market leadership
+        ✓ Deliver transformational business results with predictable outcomes
+        
+        Transform this marketing intelligence into a world-class strategic masterpiece that positions 
+        the business for market leadership, sustainable competitive advantages, and exponential growth 
+        with the sophistication and excellence of top-tier consulting deliverables.
+        
+        {self.__quantum_incentive_system()}
+        """
+        
+        return Task(
+            description=refiner_description,
+            expected_output="World-class marketing strategy masterpiece with executive-ready strategic architecture, sophisticated implementation frameworks, breakthrough innovation opportunities, and Fortune 100-quality strategic excellence that drives transformational business results.",
+            agent=agent
+        )

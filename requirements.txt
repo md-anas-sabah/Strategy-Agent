@@ -3,6 +3,7 @@ crewai
 langchain
 langchain-community
 langchain-openai
+langchain-anthropic
 openai
 python-decouple
 python-dotenv
